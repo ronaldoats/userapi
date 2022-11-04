@@ -14,7 +14,7 @@ Generacion de Token JWT, creacion de usuario, consulta de usuarios.
 
 Dillinger uses a number of open source projects to work properly:
 
-- [Java 8+] - Java
+- [Java 11+] - Java
 - [Spring Boot Starter Web]
 - [Spring Boot]
 - [Spring JPA]
