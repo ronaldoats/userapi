@@ -38,6 +38,8 @@ public class UserController {
     @PostMapping(value = "/api/users")
     ResponseEntity<UserCreatedDto> addUser(@Valid @RequestBody UserDto userDto) {
         UserEntity usr = userService.createUser(userDto.toUser());
+
+        // Retornar 201 de creado
         return ResponseEntity.ok(usr.toUserCreatedDto());
     }
 }

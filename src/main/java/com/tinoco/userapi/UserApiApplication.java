@@ -27,12 +27,13 @@ public class UserApiApplication {
                     .setDescription("Administrador");
             roleRepository.save(roleEntity);
             //create user default
-            service.createUser(new UserEntity()
-                    .setActive(true)
-                    .setName("Ronaldo Tinoco")
-                    .setEmail("ronaldots@live.com")
-                    .setPassword("password$$12..")
-                    .setRoles(Collections.singletonList(roleEntity))
+            service.createUser(
+                    new UserEntity()
+                            .setActive(true)
+                            .setName("Ronaldo Tinoco")
+                            .setEmail("ronaldots@live.com")
+                            .setPassword("password$$12..")
+                            .setRoles(Collections.singletonList(roleEntity))
             );
 
         };

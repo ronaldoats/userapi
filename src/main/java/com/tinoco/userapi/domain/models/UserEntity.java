@@ -2,6 +2,7 @@ package com.tinoco.userapi.domain.models;
 
 import com.tinoco.userapi.domain.dto.UserCreatedDto;
 import com.tinoco.userapi.domain.dto.UserDto;
+import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.GenericGenerator;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 @Table(name = "USERAPI")
 @Data
 @Accessors(chain = true)
+//@Builder
 public class UserEntity {
 
     @Id
