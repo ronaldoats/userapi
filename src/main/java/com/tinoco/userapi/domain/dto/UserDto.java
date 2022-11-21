@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Accessors(chain = true)
@@ -39,13 +40,13 @@ public class UserDto {
                 .setEmail(email.toLowerCase())
                 .setPassword(password);
 
-//        usrEntity.getPhones().addAll(phones.stream()
-//                .map(PhoneDto::phoneEntity)
-//                .map(phoneEntity -> {
-//                    //phoneEntity.setUser(usrEntity);
-//                    return phoneEntity;
-//                })
-//                .collect(Collectors.toList()));
+        usrEntity.getPhones().addAll(phones.stream()
+                .map(PhoneDto::phoneEntity)
+                .map(phoneEntity -> {
+                    phoneEntity.setUser(usrEntity);
+                    return phoneEntity;
+                })
+                .collect(Collectors.toList()));
 
         return usrEntity;
     }
